@@ -27,6 +27,30 @@ setInterval(async () => {
     }, 30000)
 }, 30000)
 
+videoRouter.get('/videos', async (ask, give) => {
+    const page = parseInt(ask.query.page) || 1;
+    const limit = parseInt(ask.query.limit) || 10;
+  
+    try {
+      const totalVideos = await VideoModel.countDocuments();
+      const totalPages = Math.ceil(totalVideos / limit);
+      const videos = await VideoModel.find()
+        .sort({ publishedAt: -1 })
+        .skip((page - 1) * limit)
+        .limit(limit);
+  
+      give.send({
+        totalVideos,
+        totalPages,
+        currentPage: page,
+        videos,
+      });
+    } catch (err) {
+      console.error('Error while fetching video data:', err);
+      give.status(500).send({ error: 'Internal server error' });
+    }
+  });
+
 module.exports = {
     videoRouter
 }
