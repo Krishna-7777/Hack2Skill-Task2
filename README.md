@@ -4,7 +4,7 @@
 
 Steps to install the project locally
 
-```shell
+```
 $ git clone https://github.com/Krishna-7777/Hack2Skill-Task2.git
 $ cd backend
 $ npm i
@@ -67,4 +67,3 @@ limit (optional): The number of search results to return (default: 5).
   ]
 }
 ```
-Feel free to add more API routes and their details as needed for your project.
