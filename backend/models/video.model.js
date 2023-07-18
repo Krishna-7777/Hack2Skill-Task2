@@ -1,15 +1,19 @@
-const { default: mongoose } = require("mongoose");
+// Import Mongoose
+const mongoose  = require("mongoose");
 
+// Define the schema for the 'video' collection
 const schema = mongoose.Schema({
-    title:String,
+    title: String,
     channelTitle: String,
     description: String,
     thumbnailURL: String,
-    publishedAt:Date
+    publishedAt: Date
 });
 
-const VideoModel=mongoose.model('video',schema);
+// Create a VideoModel based on the schema
+const VideoModel = mongoose.model('video', schema);
 
-module.exports={
+// Exported VideoModel
+module.exports = {
     VideoModel
-}
+};

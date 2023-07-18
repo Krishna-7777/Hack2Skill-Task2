@@ -1,8 +1,12 @@
+// Import necessary modules
 const mongoose = require("mongoose");
-require("dotenv").config();
+require("dotenv").config(); 
+// Load environment variables
 
-const connect=mongoose.connect(process.env.DBURL);
+// Connect to the database using the provided DBURL
+const connect = mongoose.connect(process.env.DBURL);
 
-module.exports={
+// Export the connect for db connection
+module.exports = {
     connect
-}
+};
