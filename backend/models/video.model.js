@@ -1,10 +1,11 @@
 const { default: mongoose } = require("mongoose");
 
 const schema = mongoose.Schema({
-    title: String,
+    title:String,
+    channelTitle: String,
     description: String,
-    thumbnail: String,
-    date:Date
+    thumbnailURL: String,
+    publishedAt:Date
 });
 
 const VideoModel=mongoose.model('video',schema);
