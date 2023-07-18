@@ -1,5 +1,5 @@
 // Import Mongoose
-const mongoose  = require("mongoose");
+const mongoose = require("mongoose");
 
 // Define the schema for the 'video' collection
 const schema = mongoose.Schema({

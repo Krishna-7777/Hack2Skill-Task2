@@ -1,6 +1,6 @@
 // Import necessary modules
 const mongoose = require("mongoose");
-require("dotenv").config(); 
+require("dotenv").config();
 // Load environment variables
 
 // Connect to the database using the provided DBURL

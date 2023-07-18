@@ -20,7 +20,7 @@ function extractData(item) {
 setInterval(async () => {
     // Calculate the date 30 minutes ago in ISO format
     let date = new Date(new Date().getMinutes() - 30).toISOString();
-    
+
     // Fetch new videos from YouTube API published after the calculated date
     setTimeout(async () => {
         try {
@@ -47,7 +47,7 @@ videoRouter.get('/videos', async (ask, give) => {
         // Get total number of videos and calculate total pages
         const totalVideos = await VideoModel.countDocuments();
         const totalPages = Math.ceil(totalVideos / limit);
-        
+
         // Fetch videos with pagination and sort by publishedAt in descending order
         const videos = await VideoModel.find()
             .sort({ publishedAt: -1 })
@@ -81,8 +81,8 @@ videoRouter.get('/search', async (ask, give) => {
         // Search videos with title or description matching the search query, limited by the given limit
         const searchResult = await VideoModel.find({
             $or: [
-                { title: { $regex: searchQuery, $options: 'i' } }, 
-                { description: { $regex: searchQuery, $options: 'i' } }, 
+                { title: { $regex: searchQuery, $options: 'i' } },
+                { description: { $regex: searchQuery, $options: 'i' } },
             ],
         }).limit(limitQuery);
 
