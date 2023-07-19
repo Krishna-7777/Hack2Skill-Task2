@@ -1,5 +1,11 @@
 # Hack2Skill-Task2
 
+## Deployed URL
+### https://h2s-t2.onrender.com/
+
+## Demo Video
+### https://drive.google.com/file/d/1OzsdsZickZFau-Jl5pTxP0CH8NflGhTk/view
+
 ## Installation
 
 Steps to install the project locally
@@ -10,6 +16,12 @@ $ cd backend
 $ npm i
 $ node index.js
 ```
+
+You have to also add a .env file
+
+`DBURL`=`<Your_MongoDb_Connection_String/DBname>`
+
+`key`=`Youtube_API_KEY`
 
 ## API Routes
 
